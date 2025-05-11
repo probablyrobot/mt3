@@ -27,24 +27,27 @@ include = ["mt3/**/*.gin"]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
-absl-py = "*"
-gin-config = "*"
-immutabledict = "*"
-librosa = "*"
-mir_eval = "*"
-numpy = "*"
-pretty_midi = "*"
-scikit-learn = "*"
-scipy = "*"
-tensorflow = "*"
-tensorflow-datasets = "*"
-t5 = "*"
+absl-py = ">=1.0.0"
+gin-config = ">=0.5.0"
+immutabledict = ">=2.0.0"
+librosa = ">=0.9.2"
+mir_eval = ">=0.7"
+numpy = ">=1.20.0"
+pretty_midi = ">=0.2.9"
+scikit-learn = ">=1.0.2"
+scipy = ">=1.8.0"
+# Using specific versions of tensorflow that work well together
+tensorflow = ">=2.8.0,<2.12.0"
+tensorflow-datasets = ">=4.6.0"
+t5 = ">=0.9.4"
 
-# Git dependencies need to be handled with Poetry's dependency groups and the url property
-flax = {git = "https://github.com/google/flax.git"}
-note-seq = {git = "https://github.com/magenta/note-seq.git"}
-seqio = {git = "https://github.com/google/seqio.git"}
-t5x = {git = "https://github.com/google-research/t5x.git"}
+# Git dependencies need to be pinned to specific compatible versions
+# Based on research, using a fixed compatible set of versions
+flax = {git = "https://github.com/google/flax.git", rev = "v0.6.4"}
+note-seq = {git = "https://github.com/magenta/note-seq.git", rev = "v0.0.5"}
+# Using compatible versions of seqio and t5x
+seqio = {git = "https://github.com/google/seqio.git", rev = "v0.0.14"}
+t5x = {git = "https://github.com/google-research/t5x.git", rev = "v0.0.10"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.0.0"
