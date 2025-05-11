@@ -41,13 +41,11 @@ tensorflow = ">=2.8.0,<2.12.0"
 tensorflow-datasets = ">=4.6.0"
 t5 = ">=0.9.4"
 
-# Git dependencies with specific compatible commits
-# Using known compatible commits from spring 2022 to ensure compatibility
-flax = {git = "https://github.com/google/flax.git", rev = "ec919f5"}  # v0.6.4 commit
-note-seq = {git = "https://github.com/magenta/note-seq.git", rev = "f165f6c"}  # Apr 2022 commit
-# Using compatible commits of seqio and t5x
-seqio = {git = "https://github.com/google/seqio.git", rev = "34afe00"}  # Apr 2022 commit
-t5x = {git = "https://github.com/google-research/t5x.git", rev = "96a2841"}  # Apr 2022 commit
+# Git dependencies with latest compatible commits
+flax = {git = "https://github.com/google/flax.git", rev = "a7157cfb8f5e6be532ea3c1a43d362e9fe3ce540"}
+note-seq = {git = "https://github.com/magenta/note-seq.git", rev = "35825508885343fb06f93dc87ff491dbbf034505"}
+seqio = {git = "https://github.com/google/seqio.git", rev = "49213270cc20aaafaa06814502aad655d9275936"}
+t5x = {git = "https://github.com/google-research/t5x.git", rev = "fb11a7619749b1686ab857f31667aa3303766c7e"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.0.0"
