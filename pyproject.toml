@@ -36,8 +36,8 @@ numpy = ">=1.20.0"
 pretty_midi = ">=0.2.9"
 scikit-learn = ">=1.0.2"
 scipy = ">=1.8.0"
-# Using specific versions of tensorflow that work well together
-tensorflow = ">=2.8.0,<2.12.0"
+# Using specific versions of tensorflow
+tensorflow = ">=2.11.0,<2.13.0"
 tensorflow-datasets = ">=4.6.0"
 t5 = ">=0.9.4"
 
