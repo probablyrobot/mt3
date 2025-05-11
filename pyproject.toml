@@ -1,0 +1,66 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "mt3"
+version = "0.0.1"
+description = "Multi-Task Multitrack Music Transcription"
+authors = ["Google Inc. <no-reply@google.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "http://github.com/magenta/mt3"
+keywords = ["music", "transcription", "machinelearning", "audio"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+packages = [{include = "mt3"}]
+include = ["mt3/**/*.gin"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+absl-py = "*"
+gin-config = "*"
+immutabledict = "*"
+librosa = "*"
+mir_eval = "*"
+numpy = "*"
+pretty_midi = "*"
+scikit-learn = "*"
+scipy = "*"
+tensorflow = "*"
+tensorflow-datasets = "*"
+t5 = "*"
+
+# Git dependencies need to be handled with Poetry's dependency groups and the url property
+flax = {git = "https://github.com/google/flax.git"}
+note-seq = {git = "https://github.com/magenta/note-seq.git"}
+seqio = {git = "https://github.com/google/seqio.git"}
+t5x = {git = "https://github.com/google-research/t5x.git"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.0.0"
+pytest-cov = ">=4.0.0"
+black = ">=23.0.0"
+isort = ">=5.12.0"
+mypy = ">=1.0.0"
+pylint = ">=2.17.0"
+
+[tool.pytest.ini_options]
+testpaths = ["mt3"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39", "py310", "py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88 

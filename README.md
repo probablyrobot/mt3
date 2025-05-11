@@ -4,6 +4,25 @@ MT3 is a multi-instrument automatic music transcription model that uses the [T5X
 
 This is not an officially supported Google product.
 
+## Installation
+
+This project uses [Poetry](https://python-poetry.org/) for dependency management.
+
+```bash
+# Install Poetry if you haven't already
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Clone the repository
+git clone https://github.com/magenta/mt3.git
+cd mt3
+
+# Install dependencies
+poetry install
+
+# Activate the virtual environment
+poetry shell
+```
+
 ## Transcribe your own audio
 
 Use our [colab notebook](https://colab.research.google.com/github/magenta/mt3/blob/main/mt3/colab/music_transcription_with_transformers.ipynb) to

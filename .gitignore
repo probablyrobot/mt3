@@ -24,6 +24,12 @@ wheels/
 venv/
 env/
 ENV/
+.venv/
+
+# Poetry
+poetry.lock
+.poetry/
+dist/
 
 # IDE files
 .idea/
