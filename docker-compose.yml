@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mt3:
+    build: .
+    volumes:
+      - .:/app
+      - mt3_data:/app/data
+    environment:
+      - PYTHONPATH=/app
+    command: bash
+    stdin_open: true
+    tty: true
+
+volumes:
+  mt3_data: 

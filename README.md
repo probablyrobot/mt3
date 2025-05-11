@@ -6,6 +6,8 @@ This is not an officially supported Google product.
 
 ## Installation
 
+### Option 1: Local Installation with Poetry
+
 This project uses [Poetry](https://python-poetry.org/) for dependency management.
 
 ```bash
@@ -25,6 +27,24 @@ poetry install
 
 # Activate the virtual environment
 poetry shell
+```
+
+### Option 2: Using Docker (Recommended)
+
+For consistent and reproducible environments, we recommend using Docker:
+
+```bash
+# Clone the repository
+git clone https://github.com/magenta/mt3.git
+cd mt3
+
+# Build and start the Docker container
+docker-compose up -d
+
+# Connect to the running container
+docker-compose exec mt3 bash
+
+# Once inside the container, you can run commands directly
 ```
 
 ## Transcribe your own audio
@@ -55,3 +75,7 @@ Git dependencies (flax, note-seq, seqio, and t5x) need to be installed separatel
 ```bash
 ./install_git_deps.sh
 ```
+
+### Known Issues
+
+Due to the complex dependency tree of TensorFlow and T5X, some compatibility issues may arise when installing dependencies locally. Using Docker is recommended for a more consistent environment.
