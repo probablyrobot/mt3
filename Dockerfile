@@ -14,13 +14,10 @@ RUN pip install --no-cache-dir poetry==1.7.1
 
 # Copy only requirements files first for better layer caching
 COPY pyproject.toml poetry.toml ./
-COPY install_git_deps.sh ./
 
 # Install Python dependencies
 RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction \
-    && chmod +x ./install_git_deps.sh \
-    && ./install_git_deps.sh
+    && poetry install --no-interaction
 
 # Copy application code
 COPY . .

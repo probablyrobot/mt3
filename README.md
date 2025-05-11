@@ -18,12 +18,8 @@ curl -sSL https://install.python-poetry.org | python3 -
 git clone https://github.com/magenta/mt3.git
 cd mt3
 
-# Install dependencies using Poetry
+# Install dependencies using Poetry (including git dependencies)
 poetry install
-
-# Install git dependencies (flax, note-seq, seqio, and t5x)
-# These are installed separately to avoid dependency conflicts
-./install_git_deps.sh
 
 # Activate the virtual environment
 poetry shell
@@ -70,11 +66,7 @@ This project is configured with Python 3.11 as the target version. We use:
 - [pyenv](https://github.com/pyenv/pyenv) or [mise](https://mise.jdx.dev/) for Python version management
 - [pytest](https://docs.pytest.org/) for testing
 
-Git dependencies (flax, note-seq, seqio, and t5x) need to be installed separately using the provided script:
-
-```bash
-./install_git_deps.sh
-```
+All dependencies, including git dependencies (flax, note-seq, seqio, and t5x), are managed through Poetry in the pyproject.toml file.
 
 ### Known Issues
 
