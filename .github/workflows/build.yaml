@@ -34,12 +34,10 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get -y install libsndfile1-dev
+        # Install regular dependencies with Poetry
         poetry install
-        # Install git dependencies directly with latest main commits
-        poetry run pip install git+https://github.com/google/flax.git@a7157cfb8f5e6be532ea3c1a43d362e9fe3ce540
-        poetry run pip install git+https://github.com/magenta/note-seq.git@35825508885343fb06f93dc87ff491dbbf034505
-        poetry run pip install git+https://github.com/google/seqio.git@49213270cc20aaafaa06814502aad655d9275936
-        poetry run pip install git+https://github.com/google-research/t5x.git@fb11a7619749b1686ab857f31667aa3303766c7e
+        # Install git dependencies separately with our script
+        ./install_git_deps.sh
     - name: Test with pytest
       run: |
         poetry run pytest mt3/

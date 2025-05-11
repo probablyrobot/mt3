@@ -16,8 +16,12 @@ curl -sSL https://install.python-poetry.org | python3 -
 git clone https://github.com/magenta/mt3.git
 cd mt3
 
-# Install dependencies
+# Install dependencies using Poetry
 poetry install
+
+# Install git dependencies (flax, note-seq, seqio, and t5x)
+# These are installed separately to avoid dependency conflicts
+./install_git_deps.sh
 
 # Activate the virtual environment
 poetry shell
@@ -37,3 +41,17 @@ or b) the multi-instrument transcription model described in
 For now, we do not (easily) support training.  If you like, you can try to
 follow the [T5X training instructions](https://github.com/google-research/t5x#training)
 and use one of the tasks defined in [tasks.py](mt3/tasks.py).
+
+## Development
+
+This project is configured with Python 3.11 as the target version. We use:
+
+- [Poetry](https://python-poetry.org/) for dependency management
+- [pyenv](https://github.com/pyenv/pyenv) or [mise](https://mise.jdx.dev/) for Python version management
+- [pytest](https://docs.pytest.org/) for testing
+
+Git dependencies (flax, note-seq, seqio, and t5x) need to be installed separately using the provided script:
+
+```bash
+./install_git_deps.sh
+```
