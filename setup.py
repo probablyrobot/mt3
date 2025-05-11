@@ -36,6 +36,7 @@ setuptools.setup(
         '': ['*.gin'],
     },
     scripts=[],
+    python_requires='>=3.9,<3.12',
     install_requires=[
         'absl-py',
         'flax @ git+https://github.com/google/flax#egg=flax',
@@ -60,6 +61,10 @@ setuptools.setup(
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: Apache Software License',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     tests_require=['pytest'],
     setup_requires=['pytest-runner'],
